@@ -2,20 +2,21 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_application_1/core/utils/api_services.dart';
 import 'package:flutter_application_1/core/utils/erros.dart';
+import 'package:flutter_application_1/features/home/data/dataSource/remote/remote.dart';
 import 'package:flutter_application_1/features/home/data/model/BookModel.dart';
 import 'package:flutter_application_1/features/home/domain/repo/HomeRepo.dart';
 
 class HomeRepoImpelment implements HomeRepo{
 
-  late final ApiService apiService ;
+  late final Remote remote ;
 
-  HomeRepoImpelment(this.apiService);
+  HomeRepoImpelment(this.remote);
 
   @override
   Future<Either<Failure, BookModel>> fetchBestSeller() async{
     try{
-      var data= await apiService.get(endPoint: 'volumes?q=computer science');
-      return right(BookModel.fromJson(data));
+      var data= await remote.getBooks();
+      return right(data);
     }
     catch(e){
       if (e is DioException)
@@ -28,8 +29,8 @@ class HomeRepoImpelment implements HomeRepo{
   @override
   Future<Either<Failure, BookModel>> fetchFeaturedBook() async{
      try{
-      var data= await apiService.get(endPoint: 'volumes?q=computer science');
-      return right(BookModel.fromJson(data));
+      var data= await remote.getFeatureBooks();
+      return right(data);
     }
     catch(e){
       if (e is DioException)

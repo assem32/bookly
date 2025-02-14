@@ -5,7 +5,7 @@ import 'package:flutter_application_1/core/utils/service_locator.dart';
 import 'package:flutter_application_1/features/home/data/repo/home_repo_implement.dart';
 import 'package:flutter_application_1/features/home/presenation/manger/feature_book_cubit/feature_book_cubit.dart';
 import 'package:flutter_application_1/features/home/presenation/manger/new_books_cubit/new_books_cubit.dart';
-import 'package:flutter_application_1/splash/presentation/view/splash_screen.dart';
+import 'package:flutter_application_1/features/splash/presentation/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 

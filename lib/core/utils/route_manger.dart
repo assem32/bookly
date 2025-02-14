@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/details/presentation/details_view.dart';
 import 'package:flutter_application_1/features/home/presenation/view/home_view.dart';
-import 'package:flutter_application_1/splash/presentation/view/splash_screen.dart';
+import 'package:flutter_application_1/features/splash/presentation/splash_screen.dart';
 import 'package:get/get.dart';
 
 class AppRouter {

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_application_1/core/utils/api_services.dart';
+import 'package:flutter_application_1/features/home/data/dataSource/remote/remote.dart';
 import 'package:flutter_application_1/features/home/data/repo/home_repo_implement.dart';
 import 'package:get_it/get_it.dart';
 
@@ -13,8 +14,8 @@ void setupServiceLocator(){
   );
   getIt.registerSingleton<HomeRepoImpelment>(
     HomeRepoImpelment(
-      ApiService(
-        Dio()
+      Remote(
+        ApiService(Dio())
       )
     )
   );
